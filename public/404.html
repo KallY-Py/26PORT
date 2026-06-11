@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JC Porcopio - Portfolio</title>
+  <script type="text/javascript">
+    // GitHub Pages SPA redirect
+    const pathSegments = location.pathname.split('/');
+    const repoName = pathSegments[1]; // PORTFOl
+    const newPath = location.pathname.replace(`/${repoName}`, '');
+    
+    if (newPath !== location.pathname) {
+      location.href = `${location.origin}/${repoName}/#${newPath}`;
+    } else {
+      const queryString = location.search;
+      location.replace(location.pathname + queryString + location.hash);
+    }
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>

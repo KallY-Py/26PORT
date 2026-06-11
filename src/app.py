@@ -9,20 +9,17 @@ import ssl
 app = Flask(__name__)
 CORS(app)
 
-# Email Configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587  # Changed from 465 to 587 for TLS
-app.config['MAIL_USE_TLS'] = True  # Changed to True
-app.config['MAIL_USE_SSL'] = False  # Changed to False
+app.config['MAIL_PORT'] = 587 
+app.config['MAIL_USE_TLS'] = True 
+app.config['MAIL_USE_SSL'] = False 
 app.config['MAIL_USERNAME'] = 'jcporcopio03@gmail.com'
 app.config['MAIL_PASSWORD'] = 'nwbl xprw ehum ojqn' 
 app.config['MAIL_DEFAULT_SENDER'] = 'jcporcopio03@gmail.com'
 app.config['MAIL_DEBUG'] = True
 
-# Initialize Mail
 mail = Mail(app)
 
-# Configure logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -48,7 +45,6 @@ def send_message():
                 'message': 'Please enter a valid email address'
             }), 400
         
-        # Test connection first
         try:
             logger.info("Testing SMTP connection...")
             with smtplib.SMTP(app.config['MAIL_SERVER'], app.config['MAIL_PORT']) as server:
@@ -62,7 +58,6 @@ def send_message():
                 'message': f'Email configuration error: {str(e)}'
             }), 500
         
-        # Create email message to yourself
         msg = Message(
             subject=f"Portfolio Contact Form - Message from {name}",
             recipients=['jcporcopio03@gmail.com'],
@@ -88,11 +83,9 @@ Reply to: {email}
             sender=app.config['MAIL_USERNAME']
         )
         
-        # Send the email
         mail.send(msg)
         logger.info(f"Main email sent to jcporcopio03@gmail.com from {email}")
         
-        # Optional: Send auto-reply to the user (skip if error to avoid double-failure)
         try:
             auto_reply = Message(
                 subject="Thank you for contacting John Carl Porcopio!",

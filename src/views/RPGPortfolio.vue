@@ -220,22 +220,22 @@
 
           <!-- Linux Essentials Certificate -->
           <div class="bg-slate-800/70 backdrop-blur-md rounded-xl overflow-hidden border border-slate-700 hover:border-primary hover:shadow-[0_0_30px_rgba(59,130,246,0.25)] transition-all duration-300 hover:-translate-y-2 cursor-pointer" @click="openCertificateModal('linux')">
-            <div class="p-6 flex flex-col items-center text-center">
-              <img src="@/assets/linuxbadge.png" alt="Linux Essentials" class="w-24 h-24 object-contain mb-4">
-              <h3 class="text-xl font-bold mb-2">Linux Essentials</h3>
-              <p class="text-primary text-sm mb-1">Cisco</p>
-              <p class="text-text-secondary text-xs">Issued Dec 7, 2025</p>
-            </div>
+              <div class="p-6 flex flex-col items-center text-center">
+                  <img src="@/assets/linuxbadge.png" alt="Linux Essentials" class="w-24 h-24 object-contain mb-4" draggable="false">
+                  <h3 class="text-xl font-bold mb-2">Linux Essentials</h3>
+                  <p class="text-primary text-sm mb-1">Cisco</p>
+                  <p class="text-text-secondary text-xs">Issued Dec 7, 2025</p>
+              </div>
           </div>
 
           <!-- Operating Systems Basics Certificate -->
           <div class="bg-slate-800/70 backdrop-blur-md rounded-xl overflow-hidden border border-slate-700 hover:border-primary hover:shadow-[0_0_30px_rgba(59,130,246,0.25)] transition-all duration-300 hover:-translate-y-2 cursor-pointer" @click="openCertificateModal('os')">
-            <div class="p-6 flex flex-col items-center text-center">
-              <img src="@/assets/osbadge.png" alt="Operating Systems Basics" class="w-24 h-24 object-contain mb-4">
-              <h3 class="text-xl font-bold mb-2">Operating Systems Basics</h3>
-              <p class="text-primary text-sm mb-1">Cisco</p>
-              <p class="text-text-secondary text-xs">Issued Oct 26, 2025</p>
-            </div>
+              <div class="p-6 flex flex-col items-center text-center">
+                  <img src="@/assets/osbadge.png" alt="Operating Systems Basics" class="w-24 h-24 object-contain mb-4" draggable="false">
+                  <h3 class="text-xl font-bold mb-2">Operating Systems Basics</h3>
+                  <p class="text-primary text-sm mb-1">Cisco</p>
+                  <p class="text-text-secondary text-xs">Issued Oct 26, 2025</p>
+              </div>
           </div>
         </div>
       </div>
@@ -467,7 +467,7 @@
             <button @click="closeModal" class="text-slate-400 hover:text-white transition text-2xl">&times;</button>
             </div>
             <div class="p-6 flex items-center justify-center">
-            <img :src="modalImageUrl" alt="Certificate" class="w-full h-auto rounded-lg shadow-lg">
+            <img :src="modalImageUrl" alt="Certificate" class="w-full h-auto rounded-lg shadow-lg" draggable="false">
             </div>
         </div>
     </div>
@@ -754,6 +754,13 @@ html {
   height: 2px;
   background: #137fec;
   border-radius: 2px;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 @media (max-width: 768px) {

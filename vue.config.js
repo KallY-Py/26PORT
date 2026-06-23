@@ -5,7 +5,7 @@ module.exports = defineConfig({
   publicPath: process.env.NODE_ENV === 'production' 
     ? '/26PORT/' 
     : '/',
-  outputDir: 'docs', 
+  outputDir: 'docs',
   assetsDir: 'assets',
   indexPath: 'index.html',
   filenameHashing: true,

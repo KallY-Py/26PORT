@@ -3,7 +3,7 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: process.env.NODE_ENV === 'production' 
-    ? '/PORTFOl/'  // Replace with your repository name
+    ? '/Port26/'  // Replace with your repository name
     : '/',
   outputDir: 'docs',  // Output to docs folder instead of dist
   assetsDir: 'assets',

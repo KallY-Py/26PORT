@@ -4,9 +4,8 @@
   <meta charset="utf-8">
   <title>JC Porcopio - Portfolio</title>
   <script type="text/javascript">
-    // GitHub Pages SPA redirect
     const pathSegments = location.pathname.split('/');
-    const repoName = pathSegments[1]; // PORTFOl
+    const repoName = pathSegments[1];
     const newPath = location.pathname.replace(`/${repoName}`, '');
     
     if (newPath !== location.pathname) {
